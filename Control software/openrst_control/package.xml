@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>openrst_control</name>
+  <version>0.0.0</version>
+  <description>The openrst_control package</description>
+
+
+  <maintainer email="colan@robo.mein.nagoya-u.ac.jp">Jacinto Colan</maintainer>
+  <license>LGPLv3</license>
+
+  <author email="colan@robo.mein.nagoya-u.ac.jp">Jacinto Colan</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>message_generation</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>controller_manager</depend>
+  <depend>joint_limits_interface</depend>
+  <depend>roscpp</depend>
+  <exec_depend>message_runtime</exec_depend>
+
+</package>

@@ -1,0 +1,9 @@
+<launch>
+    <!-- Max Freq for USBQUAD08: 310 Hz -->
+    <arg name="usbquad08_stream_freq" default="1000" />
+    <param name = "usbquad08_stream_freq" value="$(arg usbquad08_stream_freq)"/>
+
+
+    <node name="usbquad08_node" pkg="mc_daq_ros" type="mc_daq_usbquad08_stream" output="screen" />
+
+</launch>

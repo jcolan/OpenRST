@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="openrst_description">
+  <link
+    name="forceps_base_link">
+    <inertial>
+      <origin
+        xyz="-0.00085346561321717 0.00151847456957136 0.0523917200689592"
+        rpy="0 0 0" />
+      <mass
+        value="0.346130693545161" />
+      <inertia
+        ixx="0.000175299326957995"
+        ixy="-1.82035152080858E-06"
+        ixz="-4.50859180977554E-06"
+        iyy="0.000227860733023644"
+        iyz="2.5440596150559E-07"
+        izz="0.000273017422533615" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/forceps_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/forceps_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="interface_link">
+    <inertial>
+      <origin
+        xyz="5.06963953127062E-07 3.76579769421773E-07 0.146600908090757"
+        rpy="0 0 0" />
+      <mass
+        value="0.0025954720274517" />
+      <inertia
+        ixx="1.63504042673074E-05"
+        ixy="6.88745910370389E-12"
+        ixz="-7.38367350777381E-12"
+        iyy="1.63507045572991E-05"
+        iyz="-4.95581457832934E-12"
+        izz="3.56047788132976E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/interface_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/interface_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_interface"
+    type="fixed">
+    <origin
+      xyz="-0.000159164992458841 0.000894132521115185 0.133499999999999"
+      rpy="0 0 0" />
+    <parent
+      link="forceps_base_link" />
+    <child
+      link="interface_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="pitch_link">
+    <inertial>
+      <origin
+        xyz="-4.09948894991887E-05 -0.00585741019979946 -1.71299104040566E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.000300170225544762" />
+      <inertia
+        ixx="3.84723271088779E-09"
+        ixy="7.35865137313952E-12"
+        ixz="-8.50585202720117E-12"
+        iyy="2.25524925889064E-09"
+        iyz="1.20473966835049E-12"
+        izz="4.71755261857779E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 1 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_pitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0.28"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="interface_link" />
+    <child
+      link="pitch_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.570796"
+      upper="1.570796"
+      effort="1"
+      velocity="5.2" />
+  </joint>
+  <link
+    name="finger_left_link">
+    <inertial>
+      <origin
+        xyz="-0.0013526 -0.0087787 -0.00031865"
+        rpy="0 0 0" />
+      <mass
+        value="0.00029145" />
+      <inertia
+        ixx="1.0967E-08"
+        ixy="-6.8406E-10"
+        ixz="7.8536E-11"
+        iyy="1.3803E-09"
+        iyz="6.0144E-10"
+        izz="1.0556E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/finger_left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.250980392156863 0.12156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/finger_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_finger_left"
+    type="revolute">
+    <origin
+      xyz="0 -0.0115 0"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="pitch_link" />
+    <child
+      link="finger_left_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.570796"
+      upper="1.570796"
+      effort="1"
+      velocity="5.2" />
+  </joint>
+  <link
+    name="finger_right_link">
+    <inertial>
+      <origin
+        xyz="0.0013629 -0.0083193 0.00035754"
+        rpy="0 3.1416 0" />
+      <mass
+        value="0.00028889" />
+      <inertia
+        ixx="1.1619E-08"
+        ixy="8.6042E-10"
+        ixz="1.0617E-10"
+        iyy="1.3858E-09"
+        iyz="-6.7667E-10"
+        izz="1.1292E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.1416 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/finger_right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.27843137254902 0.43921568627451 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.1416 0" />
+      <geometry>
+        <mesh
+          filename="package://openrst_description/meshes/finger_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_finger_right"
+    type="revolute">
+    <origin
+      xyz="0 -0.0115 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="pitch_link" />
+    <child
+      link="finger_right_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.570796"
+      upper="1.570796"
+      effort="1"
+      velocity="5.2" />
+  </joint>
+  <link name="ee_link" />
+  <joint name="joint_ee" type="fixed">
+    <origin xyz="0 -0.015 0.0" rpy="0.0 0.0 0.0" />
+    <parent link="finger_left_link" />
+    <child link="ee_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>

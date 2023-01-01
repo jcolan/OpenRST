@@ -1,0 +1,77 @@
+<launch>
+
+  <arg name="prefix" default=""/>
+  <param name="prefix" value="$(arg prefix)"/>
+
+  <arg name="name" default=""/>
+  <param name="name" value="$(arg name)"/>
+
+
+
+  <!-- <param name="thread_sampling_freq_hz" value="300"/> -->
+
+  <param name="robot_description" textfile="$(find openrst_control)/urdf/openrst.urdf"/>
+
+
+
+  <group ns ="/openrst">
+
+      <!-- Forceps ID -->
+    <arg name="openrst_identifier" default="1" />
+    <param name="openrst_id" value="$(arg openrst_identifier)"/>
+
+    <!-- DAQ channels configuration for Motor 0 (Pitch) -->
+    <arg name="m0_current_ai_ch" default="3" />
+    <param name="m0_current_ai_ch" value="$(arg m0_current_ai_ch)"/>
+    <arg name="m0_photosensor_ai_ch" default="11" />
+    <param name="m0_photosensor_ai_ch" value="$(arg m0_photosensor_ai_ch)"/>
+    <arg name="m0_control_ch" default="3" />
+    <param name="m0_control_ch" value="$(arg m0_control_ch)"/>
+    <arg name="m0_encoder_ch" default="3" />
+    <param name="m0_encoder_ch" value="$(arg m0_encoder_ch)"/>
+
+    <!-- DAQ channels configuration for Motor 1 (Left Grasper) -->
+    <arg name="m1_current_ai_ch" default="5" />
+    <param name="m1_current_ai_ch" value="$(arg m1_current_ai_ch)"/>
+    <arg name="m1_photosensor_ai_ch" default="13" />
+    <param name="m1_photosensor_ai_ch" value="$(arg m1_photosensor_ai_ch)"/>
+    <arg name="m1_control_ch" default="5" />
+    <param name="m1_control_ch" value="$(arg m1_control_ch)"/>
+    <arg name="m1_encoder_ch" default="5" />
+    <param name="m1_encoder_ch" value="$(arg m1_encoder_ch)"/>
+
+    <!-- DAQ channels configuration for Motor 2 (Right Grasper)-->
+    <arg name="m2_current_ai_ch" default="4" />
+    <param name="m2_current_ai_ch" value="$(arg m2_current_ai_ch)"/>
+    <arg name="m2_photosensor_ai_ch" default="12" />
+    <param name="m2_photosensor_ai_ch" value="$(arg m2_photosensor_ai_ch)"/>
+    <arg name="m2_control_ch" default="4" />
+    <param name="m2_control_ch" value="$(arg m2_control_ch)"/>
+    <arg name="m2_encoder_ch" default="4" />
+    <param name="m2_encoder_ch" value="$(arg m2_encoder_ch)"/>
+
+    <!-- Engage sensor voltage threshold  -->
+    <arg name="m0_engage_sensor_threshold" default="0.15" />
+    <param name="m0_engage_sensor_threshold" value="$(arg m0_engage_sensor_threshold)"/>
+    <arg name="m1_engage_sensor_threshold" default="0.15" />
+    <param name="m1_engage_sensor_threshold" value="$(arg m1_engage_sensor_threshold)"/>
+    <arg name="m2_engage_sensor_threshold" default="0.15" />
+    <param name="m2_engage_sensor_threshold" value="$(arg m2_engage_sensor_threshold)"/>
+  
+
+    <param name="cyclic_time_usec" value="8000"/>
+    <arg name="use_sim" default="false" />
+    <param name="use_sim" value="$(arg use_sim)" type="bool"/>
+
+    <rosparam file="$(find openrst_control)/config/joint_limits.yaml" command="load"/>
+      <rosparam file="$(find openrst_control)/config/controller_act2.yaml" command="load"/>
+    <node name="openrst_control" pkg="openrst_control" type="openrst_control_node" output="screen" />
+    
+      <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="
+        joint_state_controller
+        effort_controller
+      "/>
+  
+  </group>
+
+</launch>

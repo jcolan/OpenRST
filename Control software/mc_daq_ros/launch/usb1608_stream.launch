@@ -1,0 +1,9 @@
+<launch>
+
+    <arg name="usb1608_stream_freq" default="500" />
+    <param name = "usb1608_stream_freq" value="$(arg usb1608_stream_freq)"/>
+
+
+    <node name="usb1608_node" pkg="mc_daq_ros" type="mc_daq_usb1608_stream" output="screen" />
+
+</launch>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="openrst" version="1.0">
+  <link
+    name="openrst_base_link">
+    <inertial>
+      <origin
+        xyz="-0.00149044162951133 3.88166641877133E-05 0.0447075908051869"
+        rpy="0 0 0" />
+      <mass
+        value="0.298186310510585" />
+      <inertia
+        ixx="0.000154776223901756"
+        ixy="-3.74733857377063E-07"
+        ixz="1.53127145926008E-06"
+        iyy="0.000144719807415472"
+        iyz="-3.22842778667153E-07"
+        izz="0.000229690754405414" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/openrst_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/openrst_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="interface_link">
+    <inertial>
+      <origin
+        xyz="3.00086145239549E-09 2.112459961582E-11 0.147402389131478"
+        rpy="0 0 0" />
+      <mass
+        value="0.00261293291328178" />
+      <inertia
+        ixx="1.63505872923441E-05"
+        ixy="3.8663038074946E-12"
+        ixz="-3.42186336718604E-14"
+        iyy="1.63509454131809E-05"
+        iyz="7.48161673523837E-15"
+        izz="3.57106513425572E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/interface_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/interface_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_interface"
+    type="fixed">
+    <origin
+      xyz="-0.00027829 0 0.13908"
+      rpy="0 0 0" />
+    <parent
+      link="openrst_base_link" />
+    <child
+      link="interface_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="pitch_link">
+    <inertial>
+      <origin
+        xyz="2.52485481626179E-08 -0.00460242657509724 1.23891152045854E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.000212134241063242" />
+      <inertia
+        ixx="2.33719234235661E-09"
+        ixy="3.22762522867187E-14"
+        ixz="-3.5296103126231E-13"
+        iyy="1.52969345561766E-09"
+        iyz="-2.85012982590978E-13"
+        izz="3.09921927199525E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 1 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_f0_pitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0.28"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="interface_link" />
+    <child
+      link="pitch_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.570796"
+      upper="1.570796"
+      effort="1"
+      velocity="5.2" />
+  </joint>
+  <link
+    name="finger_left_link">
+    <inertial>
+      <origin
+        xyz="-0.000728060044408658 -0.00823166125452757 -0.000323786767286641"
+        rpy="0 0 0" />
+      <mass
+        value="0.00013941238132763" />
+      <inertia
+        ixx="5.12659773643428E-09"
+        ixy="-1.58252679742548E-10"
+        ixz="1.2677240722727E-11"
+        iyy="4.62351522859708E-10"
+        iyz="2.54948987001423E-10"
+        izz="4.84498957565075E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/finger_left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.250980392156863 0.12156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/finger_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_f1_finger_left"
+    type="revolute">
+    <origin
+      xyz="0 -0.009 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="pitch_link" />
+    <child
+      link="finger_left_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.570796"
+      upper="1.570796"
+      effort="1"
+      velocity="5.2" />
+  </joint>
+  <link
+    name="finger_right_link">
+    <inertial>
+      <origin
+        xyz="0.000613324471596387 -0.00690795444614234 0.000398239206621067"
+        rpy="0 0 0" />
+      <mass
+        value="0.000166395577602424" />
+      <inertia
+        ixx="7.09019614386052E-09"
+        ixy="3.26224119342583E-10"
+        ixz="3.64778078548204E-11"
+        iyy="6.20037783086121E-10"
+        iyz="-4.2629331679326E-10"
+        izz="6.90443851391549E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/finger_right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.27843137254902 0.43921568627451 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://asar_description/meshes/finger_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_f2_finger_right"
+    type="revolute">
+    <origin
+      xyz="0 -0.009 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="pitch_link" />
+    <child
+      link="finger_right_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.570796"
+      upper="1.570796"
+      effort="1"
+      velocity="5.2" />
+  </joint>
+  <link name="ee_link" />
+  <joint name="joint_ee" type="fixed">
+    <origin xyz="0 -0.015 0.0" rpy="0.0 0.0 0.0" />
+    <parent link="finger_left_link" />
+    <child link="ee_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>

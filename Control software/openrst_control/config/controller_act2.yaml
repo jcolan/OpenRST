@@ -1,0 +1,42 @@
+--- #Publish all joint states ----------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 500
+
+#Position Controller
+effort_controller:
+  type: "effort_controllers/JointGroupPositionController"
+  joints:
+    - joint_f0_pitch
+    - joint_f1_finger_left
+    - joint_f2_finger_right
+  joint_f0_pitch:
+    pid:
+      {
+        p: -14.0,
+        i: -10.0,
+        d: -0.35,
+        i_clamp_min: -5.0,
+        i_clamp_max: 5.0,
+        antiwindup: true,
+      }
+  joint_f1_finger_left:
+    pid:
+      {
+        p: 13.0,
+        i: 100.0,
+        d: 0.3,
+        i_clamp_min: -5.0,
+        i_clamp_max: 5.0,
+        antiwindup: true,
+      }
+  joint_f2_finger_right:
+    pid:
+      {
+        p: 10.0,
+        i: 100.0,
+        d: 0.23,
+        i_clamp_min: -5.0,
+        i_clamp_max: 5.0,
+        antiwindup: true,
+      }

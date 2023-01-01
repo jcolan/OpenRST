@@ -1,0 +1,14 @@
+<launch>
+
+    <arg name="usb1608_stream_freq" default="500" />
+    <param name = "usb1608_stream_freq" value="$(arg usb1608_stream_freq)"/>
+    <arg name="usb3104_stream_freq" default="125" />
+    <param name = "usb3104_stream_freq" value="$(arg usb3104_stream_freq)"/>
+    <arg name="usbquad08_stream_freq" default="500" />
+    <param name = "usbquad08_stream_freq" value="$(arg usbquad08_stream_freq)"/>
+
+    <node name="usb1608_node" pkg="mc_daq_ros" type="mc_daq_usb1608_stream" output="screen" />
+    <node name="usb3104_node" pkg="mc_daq_ros" type="mc_daq_usb3104_stream" output="screen" />
+    <node name="usbquad08_node" pkg="mc_daq_ros" type="mc_daq_usbquad08_stream" output="screen" />
+
+</launch>
