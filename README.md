@@ -121,7 +121,69 @@ If you use OpenRST in your research, please cite the following paper:
 }
 ```
 
-The OpenRST platform has also been used in other research works. We are working on compiling a full list of citations.
+## Applications & Further Citations
+
+The OpenRST platform has been used in various research projects. Here are a few examples:
+
+**Toward autonomous robotic minimally invasive surgery**
+```bibtex
+@article{fozilov2023toward,
+  title={Toward autonomous robotic minimally invasive surgery: A hybrid framework combining task-motion planning and dynamic behavior trees},
+  author={Fozilov, Khusniddin and Colan, Jacinto and Sekiyama, Kosuke and Hasegawa, Yasuhisa},
+  journal={IEEE Access},
+  volume={11},
+  pages={91206--91224},
+  year={2023},
+  publisher={IEEE}
+}
+```
+
+**Latent regression based model predictive control for tissue triangulation**
+```bibtex
+@article{liu2024latent,
+  title={Latent regression based model predictive control for tissue triangulation},
+  author={Liu, Songtao and Colan, Jacinto and Zhu, Yaonan and Kobayashi, Taisuke and Misawa, Kazunari and Takeuchi, Masaru and Hasegawa, Yasuhisa},
+  journal={Advanced Robotics},
+  volume={38},
+  number={5},
+  pages={283--306},
+  year={2024},
+  publisher={Taylor \& Francis}
+}
+```
+
+**Task Segmentation Based on Transition State Clustering for Surgical Robot Assistance**
+```bibtex
+@INPROCEEDINGS{10155581,
+  author={Yamada, Yutaro and Colan, Jacinto and Davila, Ana and Hasegawa, Yasuhisa},
+  booktitle={2023 8th International Conference on Control and Robotics Engineering (ICCRE)}, 
+  title={Task Segmentation Based on Transition State Clustering for Surgical Robot Assistance}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={260-264},
+  doi={10.1109/ICCRE57112.2023.10155581}}
+```
+
+**Real-time inverse kinematics for robotic manipulation under remote center-of-motion constraint**
+```bibtex
+@article{davila2024real,
+  title={Real-time inverse kinematics for robotic manipulation under remote center-of-motion constraint using memetic evolution},
+  author={Davila, Ana and Colan, Jacinto and Hasegawa, Yasuhisa},
+  journal={Journal of Computational Design and Engineering},
+  volume={11},
+  number={3},
+  pages={248--264},
+  year={2024},
+  publisher={Oxford University Press}
+}
+```
+
+## Roadmap
+
+We are continuously working to improve the OpenRST platform. Our current focus is:
+
+*   **Migrating to ROS2:** We are in the process of updating the control software to be compatible with ROS2, bringing more stability, security, and performance to the platform.
 
 ## License
 
